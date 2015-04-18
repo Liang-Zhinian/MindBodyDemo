@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MindBodyDemo.Models.Data.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Back", "")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().appointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().startDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().endDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().appointmentType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().clientName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.appointmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appointmentType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.clientName)
+            </td>
+        </tr>
+    }
+
+</table>
