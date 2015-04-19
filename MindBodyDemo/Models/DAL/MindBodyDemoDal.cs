@@ -34,14 +34,8 @@ namespace MindBodyDemo.Models.DAL
             return validStaff;
         }
 
-
-
-
         public List<MindBodyDemo.Models.Data.Appointment> GetStaffAppointments(string first, string lastName, string staffId) 
         {
-            //first = "Luke";
-            //lastName = "Peterson";
-            //staffId = 100000052;
             GetStaffAppointmentsRequest request = new GetStaffAppointmentsRequest();
 
             // for source credentials
@@ -58,8 +52,6 @@ namespace MindBodyDemo.Models.DAL
             AppointmentService.StaffCredentials staffCredentials = new AppointmentService.StaffCredentials();
             staffCredentials.Username = first + "." + lastName;
             staffCredentials.Password = first[0].ToString().ToLower() + lastName[0].ToString().ToLower() + staffId;
-            //staffCredentials.Username = "Luke.Peterson";
-            //staffCredentials.Password = "lp100000052";
             staffCredentials.SiteIDs = ids;
 
             request.StaffCredentials = staffCredentials;
@@ -80,6 +72,7 @@ namespace MindBodyDemo.Models.DAL
                     data.startDate = app.StartDateTime.Value.TimeOfDay.ToString();
                     data.endDate = app.EndDateTime.Value.TimeOfDay.ToString();
                     data.appointmentType = app.SessionType.Name;
+
                     data.clientName = app.Client.FirstName + app.Client.LastName;
                     apps.Add(data);
                 }
