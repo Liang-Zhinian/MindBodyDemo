@@ -9,29 +9,28 @@
 <p>
     @Html.ActionLink("Back", "")
 </p>
-<table>
+<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.First().appointmentDate)
+            Appointment Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().startDate)
+            Start Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().endDate)
+            End Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().appointmentType)
+            Appointment Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().clientName)
+            Client Name
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="info">
             <td>
                 @Html.DisplayFor(modelItem => item.appointmentDate)
             </td>

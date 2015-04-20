@@ -33,11 +33,13 @@ namespace MindBodyDemo.Controllers
 
 
         //
-        // GET: /Staff/Details/5
+        // GET: /Staff/Info/5
 
-        public ActionResult Details(int id)
+        public ActionResult Info(string id)
         {
-            return View();
+            IMindBodyDemoBL bl = new MindBodyDemoBL();
+            var model = bl.GetStaffInfo(id);
+            return View(model);
         }
 
         //

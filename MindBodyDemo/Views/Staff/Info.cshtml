@@ -1,0 +1,93 @@
+﻿@model MindBodyDemo.StaffService.Staff
+
+@{
+    ViewBag.Title = "Info";
+}
+<h2>Staff personal Info</h2>
+
+<table class="table" border="1" width="800">
+        <tr class="info">
+            <td>
+                @if (!String.IsNullOrEmpty(Model.ImageURL))
+                {
+                    <img src="@Model.ImageURL" alt="imageurl" style="width:85px;height:100px" />
+                }
+                else
+                {
+                    <img src="~/Images/noPersonImg.PNG" alt="imageurl" style="width:80px;height:100px" />
+                }
+            </td>
+            <td colspan="5">
+                @Html.ActionLink(Model.Name, "Appointment", new { firstName = Model.FirstName, lastName = Model.LastName, staffId = Model.ID })
+            </td>
+        </tr>
+        <tr>
+            <td>Staff ID</td>
+            <td>@Model.ID</td>
+            <td>Address</td>
+            <td>@Model.Address</td>
+            <td>SortOrder</td>
+            <td>@Model.SortOrder</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>@Model.FirstName</td>
+            <td>Address 2</td>
+            <td>@Model.Address2</td>
+            <td>Sort Order Specific</td>
+            <td>@Model.SortOrderSpecified</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>@Model.LastName</td>
+            <td>City</td>
+            <td>@Model.LastName</td>
+            <td>Muti Location</td>
+            <td>@Model.MultiLocation</td>
+        </tr>
+        <tr>
+            <td>FirstName</td>
+            <td>@Model.FirstName</td>
+            <td>State</td>
+            <td>@Model.State</td>
+            <td>Action Specified</td>
+            <td>@Model.ActionSpecified</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Model.Email</td>
+            <td>Country</td>
+            <td>@Model.Country</td>
+            <td>ID Specified</td>
+            <td>@Model.IDSpecified</td>
+        </tr>
+
+        <tr>
+            <td>Mobile Phone</td>
+            <td>@Model.MobilePhone</td>
+            <td>Postal Code</td>
+            <td>@Model.PostalCode</td>
+            <td>is Male</td>
+            <td>@Model.isMale</td>
+        </tr>
+        <tr>
+            <td>Home Phone</td>
+            <td>@Model.HomePhone</td>
+            <td>Foreign Zip</td>
+            <td>@Model.ForeignZip</td>
+            <td>Error Code</td>
+            <td>@Model.ErrorCode</td>
+        </tr>
+        <tr>
+            <td>Work Phone</td>
+            <td>@Model.WorkPhone</td>
+            <td></td>
+            <td></td>
+            <td>Execute</td>
+            <td>@Model.Execute</td>
+        </tr>
+        <tr>
+            <td>Bio</td>
+            <td colspan="5">@Model.Bio</td>
+        </tr>
+ </table>

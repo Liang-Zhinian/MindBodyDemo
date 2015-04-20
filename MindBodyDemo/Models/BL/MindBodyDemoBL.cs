@@ -26,5 +26,10 @@ namespace MindBodyDemo.Models.BL
         {
             return dal.GetStaffAppointments( first,  lastName,  staffId);
         }
+
+        public MindBodyDemo.StaffService.Staff GetStaffInfo(string id)
+        {
+            return dal.GetStaffInfo(id);
+        }
     }
 }
