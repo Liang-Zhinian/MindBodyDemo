@@ -22,9 +22,10 @@ namespace MindBodyDemo.Models.BL
             return dal.GetAllStaff();
         }
 
-        public List<MindBodyDemo.Models.Data.Appointment> GetStaffAppointments(String first, String lastName, String staffId)
+        public List<MindBodyDemo.Models.Data.Appointment> GetStaffAppointments(string staffId)
         {
-            return dal.GetStaffAppointments( first,  lastName,  staffId);
+            var staff = this.GetStaffInfo(staffId);
+            return dal.GetStaffAppointments(staff.FirstName, staff.LastName, staffId);
         }
 
         public MindBodyDemo.StaffService.Staff GetStaffInfo(string id)

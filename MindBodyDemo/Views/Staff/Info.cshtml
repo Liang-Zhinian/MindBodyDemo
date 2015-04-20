@@ -20,7 +20,7 @@
             </td>
             <td colspan="5">
                 <strong>@Model.Name <br /> </strong>
-                @Html.ActionLink("Appointments", "Appointment", new { firstName = Model.FirstName, lastName = Model.LastName, staffId = Model.ID })
+                @Html.ActionLink("Appointments", "Appointment", new { staffId = Model.ID })
             </td>
         </tr>
         <tr>

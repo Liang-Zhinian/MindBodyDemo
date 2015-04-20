@@ -22,12 +22,12 @@ namespace MindBodyDemo.Controllers
         }
 
         //
-        // GET: /Staff/Appointment/
+        // GET: /Staff/Appointment/6
 
-        public ActionResult Appointment(string firstName, string lastName, string staffId)
+        public ActionResult Appointment(string id)
         {
             IMindBodyDemoBL bl = new MindBodyDemoBL();
-            var model = bl.GetStaffAppointments(firstName, lastName, staffId);
+            var model = bl.GetStaffAppointments(id);
             return View(model);
         }
 

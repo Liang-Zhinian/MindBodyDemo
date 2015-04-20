@@ -13,7 +13,7 @@
         <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
             @foreach (var item in Model)
             {
-                <li role="presentation">@Html.ActionLink(item.Name, "Appointment", new { firstName = item.FirstName, lastName = item.LastName, staffId = item.ID })</li>
+                <li role="presentation">@Html.ActionLink(item.Name, "Appointment", new { id = item.ID })</li>
             }
         </ul>
     </span>
