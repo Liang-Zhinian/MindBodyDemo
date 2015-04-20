@@ -29,7 +29,10 @@ namespace MindBodyDemo.Models.BL
 
         public MindBodyDemo.StaffService.Staff GetStaffInfo(string id)
         {
-            return dal.GetStaffInfo(id);
+            long pid = Convert.ToInt64(id);
+            var staff = GetCompanyStaff();
+            MindBodyDemo.StaffService.Staff staffInfo = staff.Single(s => s.ID == pid);
+            return staffInfo;
         }
     }
 }

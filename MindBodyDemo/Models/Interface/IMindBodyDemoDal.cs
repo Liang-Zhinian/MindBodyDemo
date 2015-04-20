@@ -12,6 +12,5 @@ namespace MindBodyDemo.Models.Interface
     {
         IEnumerable<MindBodyDemo.StaffService.Staff> GetAllStaff();
         List<MindBodyDemo.Models.Data.Appointment> GetStaffAppointments(string first, string lastName, string staffId);
-        MindBodyDemo.StaffService.Staff GetStaffInfo(string id);
     }
 }

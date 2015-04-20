@@ -10,8 +10,6 @@ namespace MindBodyDemo.Models.DAL
 {
     public class MindBodyDemoDal : IMindBodyDemoDal
     {
-        public static IEnumerable<MindBodyDemo.StaffService.Staff> allStaff;
-
         public IEnumerable<MindBodyDemo.StaffService.Staff> GetAllStaff() 
         {
             GetStaffRequest staffRequest = new GetStaffRequest();
@@ -24,16 +22,13 @@ namespace MindBodyDemo.Models.DAL
 
             staffRequest.SourceCredentials = credentials;
 
-
             MindBodyDemo.StaffService.StaffService s = new StaffService.StaffService();
             
             GetStaffResult result =  s.GetStaff(staffRequest);
-            result.StaffMembers.Select(x=>x.ID<=0);
 
             IEnumerable<MindBodyDemo.StaffService.Staff> validStaff = from staff in result.StaffMembers
                                                                 where staff.ID > 0
                                                                 select staff;
-            allStaff = validStaff;
             return validStaff;
         }
 
@@ -82,14 +77,6 @@ namespace MindBodyDemo.Models.DAL
             }
 
             return apps;
-        }
-
-        public MindBodyDemo.StaffService.Staff GetStaffInfo(string id) 
-        {
-            long pid  = Convert.ToInt64(id);
-            var staff = GetAllStaff();
-            MindBodyDemo.StaffService.Staff staffInfo = staff.Single(s => s.ID == pid);
-            return staffInfo;
         }
     }
 }

@@ -6,47 +6,46 @@
 
 <h2>Appointment</h2>
 
-<p>
-    @Html.ActionLink("Back", "")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            Appointment Date
-        </th>
-        <th>
-            Start Date
-        </th>
-        <th>
-            End Date
-        </th>
-        <th>
-            Appointment Type
-        </th>
-        <th>
-            Client Name
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="container">
+    <table class="table">
         <tr class="info">
-            <td>
-                @Html.DisplayFor(modelItem => item.appointmentDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.startDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.endDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.appointmentType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.clientName)
-            </td>
+            <th>
+                Appointment Date
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                End Date
+            </th>
+            <th>
+                Appointment Type
+            </th>
+            <th>
+                Client Name
+            </th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.appointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.startDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.endDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.appointmentType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.clientName)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
